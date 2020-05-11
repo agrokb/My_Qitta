@@ -1,5 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-light navbar-green">
-  
+<div class="background-green">
+<% if current_user == nil %>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+      </div>
+      <div class="col-4">
+        <%= form_for @users,url:user_registration_path do |f| %>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+        <div class="field">
+          <%= f.label :email,'メールアドレス' %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>   
+        <div class="actions">
+          <%= f.submit "登録",class:'btn btn-primary mt-4 mb-2' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <nav class="navbar navbar-expand-lg navbar-light background-green">
   <a class="navbar-brand text-white" href="#"><h1>Qitta</h1></a>
   <div class="btn-group">
     <button type="button" class="btn dropdown-toggle dropdown-toggle-split btn-sm" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
@@ -33,9 +59,9 @@
       <input class="form-control mr-sm-2" type="search" placeholder="キーワードを入力" aria-label="Search">
     </form>
     </ul>
-  </div>
-      
+  </div>     
           <button class="btn btn-outline-light mr-2" type="submit">ユーザ登録</button>   
-          <%=link_to 'ログイン',user_session_path,class:'text-white'%>
-     
+          <%=link_to 'ログイン',user_session_path,class:'text-white'%> 
 </nav>
+<% end %>
+ 

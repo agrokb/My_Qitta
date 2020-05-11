@@ -4,18 +4,14 @@
     <title>MyQitta</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <%= render '/shared/frontend/navbar'%>
-  <div class="container">
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+      <%= render '/shared/frontend/notifications' %>
+      <%= render '/shared/frontend/navbar' %>
+            <%= render '/shared/frontend/indexlog' %>
       <%= yield %>
-　</div>
-    
+      <%= render '/shared/frontend/footer'%>
   </body>
 </html>
