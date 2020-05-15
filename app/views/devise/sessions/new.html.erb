@@ -33,7 +33,7 @@
         <div class="col-6 border-left form-group">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field mb-4">
-            <%= f.email_field :email, autocomplete: "email",class:'form-control',placeholder:'ユーザー名　または　メールアドレス' %>
+            <%= f.text_field :login , autocomplete: "email",class:'form-control',placeholder:'ユーザー名　または　メールアドレス' %>
           </div>
 
           <div class="field mb-4">
@@ -48,7 +48,6 @@
 
       </div>
     </div>
-
     <div class="col-2"></div>
   </div>
 </div>
