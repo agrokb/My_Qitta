@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   devise_for :users ,controllers: {
     registrations: 'users/registrations'
   }
-  root 'welcome#index'
+  root 'pages#index'
 end

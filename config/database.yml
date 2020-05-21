@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: my_qitta_production
-  username: my_qitta
+  username: larrychuang 
   password: <%= ENV['MY_QITTA_DATABASE_PASSWORD'] %>
