@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_192641) do
+ActiveRecord::Schema.define(version: 2020_05_22_200032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "stories", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.text "memo"
-    t.boolean "is_publish"
-    t.text "title"
+    t.text "memo", null: false
+    t.boolean "is_publish", default: true
+    t.text "title", null: false
     t.text "skill_tag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
