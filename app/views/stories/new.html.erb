@@ -1,21 +1,21 @@
 <div class="container">
-<form class="mr-2 ml-2">
+    <%= notice %>
+    <%= form_with model:@story,url: stories_path do |f| %>
     <div class="form-group mt-2">
-        <input type="text" class="form-control form-control-lg" id="FormControlInput1" placeholder="タイトル">
+        <%= f.text_field :title,placeholder:"タイトル",class:"form-control form-control-lg" %>
     </div>
     <div class="form-group mt-2">
-        <input type="text" class="form-control form-control-md" id="FormControlInput1"
-            placeholder="プログラミング技術に関連するダグをスペース区切りで五つまで入力">
+        <%= f.text_field :skill_tag,placeholder:"プログラミング技術に関連するダグをスペース区切りで五つまで入力",class:"form-control form-control-md" %>
     </div>
-
     <div class="form-group">
         <label class="mr-2">本文</label>
         <%= render 'markdown' %>
         <label class="mr-2">未投稿</label>
-        <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="20"></textarea>
+        <%= f.text_area :memo ,class:'form-control mt-1',rows:"20" %>
+        <%= f.submit '投稿',class:'btn btn-primary mt-2' %>
     </div>
-    <%= link_to '投稿',stories_path(),class:'btn btn-primary',method:"POST" %>
-    <%= link_to '保存',stories_path(),class:'btn btn-dark',method:"POST" %>
 
-</form>
+    <% end %>
+
+
 </div>

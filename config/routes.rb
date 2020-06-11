@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root 'pages#index'
-  resource :stories
+  resources :stories
 end

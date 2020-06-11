@@ -1,0 +1,29 @@
+<div class="container">
+   <h1>投稿リスト</h1>
+  <table class="table">
+     <thead>
+    <tr>
+      <th scope="col">タイトル</th>
+      <th scope="col">状態</th>
+      <th scope="col">時間</th>
+    </tr>
+  </thead>
+    <tbody>   
+     <% @stories.each do |story|%>
+     <tr>
+       <td> <%= story.title %> </td>
+       <td> 
+            <% if story.is_publish %> 
+              <%= "已投稿" %>
+            <% else %>
+              <%= "未投稿" %>
+            <% end %>
+       
+       </td>
+       <td> <%= time_ago_in_words(story.updated_at) %> </td>
+     </tr>
+     <% end %>
+  </tbody>
+</table>
+
+</div>
