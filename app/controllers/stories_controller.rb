@@ -19,6 +19,7 @@ class StoriesController < ApplicationController
    end
  end
 def show
+  @user = Story.friendly.find(params[:id])
 end
 private
 

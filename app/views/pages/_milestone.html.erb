@@ -4,15 +4,10 @@
             <h5 class="card-title">マイルストーン</h5>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+         <% @stories.each do |s| %>
+          <li class="list-group-item"><%= s.like_count %> <%= link_to s.title,story_path(s.title),class:'text-secondary' %> </li>
+        </ul>
+
+       <% end %>
     </div>
 </div>

@@ -11,7 +11,7 @@
     <tbody>   
      <% @stories.each do |story|%>
      <tr>
-       <td> <%= story.title %> </td>
+       <td> <%= link_to story.title,story_path(story.title) %> </td>
        <td> 
             <% if story.is_publish %> 
               <%= "已投稿" %>
@@ -20,7 +20,7 @@
             <% end %>
        
        </td>
-       <td> <%= time_ago_in_words(story.updated_at) %> </td>
+       <td> <%= time_ago_in_words(story.updated_at) %></td>
      </tr>
      <% end %>
   </tbody>
